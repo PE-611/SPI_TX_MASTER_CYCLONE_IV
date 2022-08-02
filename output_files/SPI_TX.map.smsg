@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at SPI_TX.v(10): object "start_transmit" differs only in case from object "START_TRANSMIT" in the same scope File: C:/intelFPGA_lite/18.1/Projects/SPI_TX/SPI_TX.v Line: 10

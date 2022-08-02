@@ -1,0 +1,366 @@
+# Reading pref.tcl
+# do SPI_TX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Job/project_quartus/SPI_TX-main {D:/Job/project_quartus/SPI_TX-main/SPI_TX.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:04 on Aug 02,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Job/project_quartus/SPI_TX-main" D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/SPI_TX.v(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:24:04 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# vlog -vlog01compat -work work +incdir+D:/Job/project_quartus/SPI_TX-main/simulation/modelsim {D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:04 on Aug 02,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Job/project_quartus/SPI_TX-main/simulation/modelsim" D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt(56): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:24:04 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  SPI_TX_vlg_tst
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" SPI_TX_vlg_tst 
+# Start time: 20:24:04 on Aug 02,2022
+# Loading work.SPI_TX_vlg_tst
+# Loading work.SPI_TX
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/IDLE
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/STARTING_TRANSMITTING
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/SET_BIT_TO_TRANSMITTING
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/SET_HIGH_CLK_SPI
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/SET_LOW_CLK_SPI
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/DEC_BIT_CNT
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/STOP_TRANSMIT
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/clk
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/start_transmit
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/reset
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/sdi
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/cs
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/out_spi_clk
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/data
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/state
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/next_state
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/state_cnt
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/transmit_flg
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/transmit_flg_cnt
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/cnt
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/bit_cnt
+restart -f
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+add wave -position 6  sim:/SPI_TX_vlg_tst/i1/state
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:33:00 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt(56): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:33:00 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:33:05 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/SPI_TX.v(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:33:05 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+restart -f
+# Loading work.SPI_TX_vlg_tst
+# Loading work.SPI_TX
+# Warning in wave window restart: (vish-4014) No objects found matching '/SPI_TX_vlg_tst/i1/state_cnt'. 
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:07 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/SPI_TX.v(44): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:43:08 on Aug 02,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:43:12 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt(56): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:43:12 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+restart -f
+# Loading work.SPI_TX_vlg_tst
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:46:22 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:46:22 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX_vlg_tst
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+add wave -position end  sim:/SPI_TX_vlg_tst/i1/data
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:47:33 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:47:33 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:48:05 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# ** Warning: D:/Job/project_quartus/SPI_TX-main/SPI_TX.v(44): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:48:05 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:48:10 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:48:10 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX_vlg_tst
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:49:24 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:49:24 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:53:04 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:53:04 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:53:10 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:53:10 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX_vlg_tst
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:56:56 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt 
+# -- Compiling module SPI_TX_vlg_tst
+# 
+# Top level modules:
+# 	SPI_TX_vlg_tst
+# End time: 20:56:56 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX_vlg_tst
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:57:24 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:57:24 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:58:42 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 20:58:42 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:00:22 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 21:00:22 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:02:26 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 21:02:26 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:05:39 on Aug 02,2022
+# vlog -reportprogress 300 -work work D:/Job/project_quartus/SPI_TX-main/SPI_TX.v 
+# -- Compiling module SPI_TX
+# 
+# Top level modules:
+# 	SPI_TX
+# End time: 21:05:39 on Aug 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SPI_TX
+run
+# GetModuleFileName: Не найден указанный модуль.
+# 
+# 
+# Running testbench
+# End time: 21:06:05 on Aug 02,2022, Elapsed time: 0:42:01
+# Errors: 0, Warnings: 0

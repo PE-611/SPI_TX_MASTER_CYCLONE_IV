@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Job/project_quartus/SPI_TX-main/simulation/modelsim
+vSPI_TX
+!s110 1659463539
+!i10b 1
+!s100 HLV3GV<cDjg3hLZO<B=A=0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Id=]z9NI_;[X;0m4kL@J8h0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1659463533
+8D:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+FD:/Job/project_quartus/SPI_TX-main/SPI_TX.v
+!i122 18
+L0 10 220
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1659463539.000000
+!s107 D:/Job/project_quartus/SPI_TX-main/SPI_TX.v|
+!s90 -reportprogress|300|-work|work|D:/Job/project_quartus/SPI_TX-main/SPI_TX.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@s@p@i_@t@x
+vSPI_TX_vlg_tst
+!s110 1659463016
+!i10b 1
+!s100 G;5ef39T5=]NXP?L4fU0n2
+R1
+I42lO>><WNiEI@H>KI_Fo40
+R2
+R0
+w1659462480
+8D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+FD:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt
+!i122 13
+L0 29 42
+R3
+r1
+!s85 0
+31
+!s108 1659463016.000000
+!s107 D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt|
+!s90 -reportprogress|300|-work|work|D:/Job/project_quartus/SPI_TX-main/simulation/modelsim/SPI_TX.vt|
+!i113 1
+R4
+R5
+n@s@p@i_@t@x_vlg_tst

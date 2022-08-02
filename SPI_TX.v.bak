@@ -1,0 +1,224 @@
+///////////////////////////////////////////////////////////
+// Name File : SPI_TX.v 											//
+// Autor : Dyomkin Pavel Mikhailovich 							//
+// Company : GSC RF TRINITI										//
+// Description : SPI master module							  	//
+// Start design : 12.10.2021 										//
+// Last revision: 14.10.2021										//
+///////////////////////////////////////////////////////////
+
+module SPI_TX (input clk, start_transmit, reset,
+					input [9:0] data,
+					output reg sdi, cs, out_spi_clk
+					);
+
+initial sdi 			<= 1'b0;
+initial cs 				<= 1'b1;
+initial out_spi_clk  <= 1'b0;					
+
+
+
+
+reg [7:0] state;	
+reg [7:0] next_state;
+reg [7:0] state_cnt;
+
+localparam IDLE 							= 8'd0;
+localparam STARTING_TRANSMITTING		= 8'd1;	
+localparam SET_BIT_TO_TRANSMITTING  = 8'd2;
+localparam SET_HIGH_CLK_SPI			= 8'd3;
+localparam SET_LOW_CLK_SPI				= 8'd4;
+localparam DEC_BIT_CNT 					= 8'd5;
+localparam STOP_TRANSMIT				= 8'd6;
+
+
+reg transmit_flg;
+initial transmit_flg <= 1'b0;
+reg [24:0] transmit_flg_cnt;
+initial transmit_flg_cnt <= 1'b0;
+
+reg [24:0] cnt;
+initial cnt <= 1'b0;	
+
+
+
+reg [7:0] bit_cnt;
+initial bit_cnt <= 8'd9;
+
+			
+			
+always @* 	
+		
+		case (state)
+			
+			IDLE:
+						
+				
+				if (start_transmit == 1'b1 && transmit_flg == 1'b1) begin
+					next_state <= STARTING_TRANSMITTING;
+				end
+				
+				else begin
+					next_state <= IDLE;
+				end
+				
+				
+			STARTING_TRANSMITTING:
+				
+				if (cnt == 12'd500) begin
+					next_state <= SET_BIT_TO_TRANSMITTING;
+				end
+				
+				else begin
+					next_state <= STARTING_TRANSMITTING;
+				end
+				
+			SET_BIT_TO_TRANSMITTING:
+				
+				if (cnt == 12'd1000) begin
+					next_state <= SET_HIGH_CLK_SPI;
+				end
+				
+				else begin
+					next_state <= SET_BIT_TO_TRANSMITTING;
+				end
+				
+			SET_HIGH_CLK_SPI:
+				
+				if (cnt == 12'd1500) begin
+					next_state <= SET_LOW_CLK_SPI;
+				end
+				
+				else begin
+					next_state <= SET_HIGH_CLK_SPI;
+				end
+				
+			SET_LOW_CLK_SPI: 
+				
+				if (cnt == 12'd2000) begin
+					next_state <= DEC_BIT_CNT;
+				end
+				
+				else begin
+					next_state <= SET_LOW_CLK_SPI;
+				end
+				
+			DEC_BIT_CNT: 
+				
+				if (bit_cnt == 8'b0) begin
+					next_state <= STOP_TRANSMIT;
+				end
+				
+				else begin
+					next_state <= SET_BIT_TO_TRANSMITTING;
+				end
+
+			STOP_TRANSMIT:
+				
+				if (cnt >= 12'd2500) begin
+					next_state <= IDLE;
+				end
+				
+				else begin
+					next_state <= STOP_TRANSMIT;
+				end
+				
+				
+				
+			default:
+				next_state <= IDLE;
+		
+		endcase
+		
+		
+always @(posedge clk) begin
+	
+	if (start_transmit == 1'b0) begin
+		transmit_flg_cnt <= 1'b0;
+	end
+
+	if (start_transmit == 1'b1 && transmit_flg_cnt == 1'b0) begin
+		transmit_flg <= 1'b1;	
+	end
+
+	if (transmit_flg == 1'b1) begin
+		transmit_flg_cnt <= transmit_flg_cnt + 1'b1;
+	end
+
+	if (transmit_flg_cnt > 24'd2500) begin
+		transmit_flg <= 1'b0;
+	end
+
+	if (state == IDLE) begin
+		cnt <= 1'b0;
+		bit_cnt <= 8'd9;
+		cs <= 1'b1; 
+		sdi <= 1'b0;
+		out_spi_clk <= 1'b0;
+	end
+	
+	if (state == STARTING_TRANSMITTING) begin
+		cnt <= cnt + 1'b1;
+		out_spi_clk <= 1'b0;
+		sdi <= 1'b0;
+		cs <= 1'b0;
+	end
+	
+	if (state == SET_BIT_TO_TRANSMITTING) begin
+		cnt <= cnt + 1'b1;
+		out_spi_clk <= 1'b0;
+		sdi <= data[bit_cnt];
+		cs <= 1'b0;
+	end
+	
+	if (state == SET_HIGH_CLK_SPI) begin
+		cnt <= cnt + 1'b1;
+		out_spi_clk <= 1'b1;
+		cs <= 1'b0;
+	end
+	
+	if (state == SET_LOW_CLK_SPI) begin
+		cnt <= cnt + 1'b1;
+		out_spi_clk <= 1'b0;
+	end
+	
+	if (state == DEC_BIT_CNT) begin
+		bit_cnt <= bit_cnt - 1'b1;
+		cnt <= 12'd500;
+	end
+	
+	if (state == STOP_TRANSMIT) begin
+		cs <= 1'b1;
+		cnt <= cnt + 1'b1;
+	end 
+	
+	
+
+end	
+
+
+
+
+always @(posedge clk or negedge reset) begin 
+	
+	
+	if(!reset) begin
+		state <= IDLE;
+	end
+	
+	else begin
+		state <= next_state;
+	end
+end		
+
+
+
+
+
+
+
+
+
+		
+endmodule
+
